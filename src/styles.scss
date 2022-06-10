@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 2rem;
+}
+ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+li {
+  padding: 0rem 2rem 0rem 0rem;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+p {
+  margin: 2rem;
+}
+
+@media (max-width: 500px) {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+  }
+  p {
+    margin: 5rem 2rem 2rem 2rem;
+  }
+
+}
