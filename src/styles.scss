@@ -21,10 +21,14 @@ p {
   margin: 2rem;
 }
 
+form {
+  margin: 2rem;
+}
+
 @media (max-width: 500px) {
   ul {
     list-style: none;
-    display: flex;
+    display: none;
     justify-content: flex-end;
     padding: 0;
   }
