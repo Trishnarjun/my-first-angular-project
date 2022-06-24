@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Raleway:wght@200&family=Varela+Round&display=swap');
+
 body {
   margin: 2rem;
+
 }
 ul {
   list-style: none;
@@ -25,6 +28,23 @@ form {
   margin: 2rem;
 }
 
+html {
+  background-color:rgb(169, 242, 237);
+  font-family: 'Comfortaa';
+}
+
+.text {
+  font-family: 'Comfortaa';
+}
+
+.btn {
+  font-family: 'Comfortaa';
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+
+
 @media (max-width: 500px) {
   ul {
     list-style: none;
@@ -34,6 +54,17 @@ form {
   }
   p {
     margin: 5rem 2rem 2rem 2rem;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
 }
