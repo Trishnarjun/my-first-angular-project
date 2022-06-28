@@ -1,8 +1,15 @@
-<p class="title">A ToDo list</p>
-<div>
-  <p>Type in your todo and add! </p>
-  <form>
-    <input type="text" class="text" name="item" placeholder="to do list">
-    <input type="submit"  class="btn" value="Add">
-  </form>
+<div class="all-content">
+  <h1 class="title">A ToDo list</h1>
+  <div class="todo-entre">
+    <h2>Type in your todo and add! </h2>
+    <form>
+      <input type="text" class="text" name="item" placeholder="to do list" [(ngModel)]="ToDoTxt">
+      <!-- <br><span>{{ToDoTxt}}</span> -->
+      <input type="submit"  class="btn" [value]="btnTxt" (click)="addItem()"  >
+    </form>
+  </div>
+  <div class="todo-list">
+    <h1 >List ({{todoCount}})</h1>
+    <p *ngFor=" let todo of todos" >{{todo}}</p>
+  </div>
 </div>

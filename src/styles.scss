@@ -35,24 +35,47 @@ html {
 
 .text {
   font-family: 'Comfortaa';
+  border: none;
+  padding: .7rem;
+}
+
+.text ::selection {
+  border: 1px saddlebrown;
 }
 
 .btn {
   font-family: 'Comfortaa';
   display: flex;
   margin-top: 1.5rem;
+  padding: .7rem;
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-radius: 2rem;
+  transition: 0.3s;
+
+}
+
+.btn:hover {
+  box-shadow: 4px 4px gray;
+
+}
+
+.all-content {
+  margin: 3rem 0rem 0rem 2rem;
 }
 
 
 
+
 @media (max-width: 500px) {
-  ul {
-    list-style: none;
-    display: none;
-    justify-content: flex-end;
-    padding: 0;
-  }
-  p {
+  // ul {
+  //   list-style: none;
+  //   display: none;
+  //   justify-content: flex-end;
+  //   padding: 0;
+  // }
+  p, h2 {
     margin: 5rem 2rem 2rem 2rem;
   }
 
@@ -66,5 +89,6 @@ html {
     flex-direction: column;
     gap: 2rem;
   }
+
 
 }
