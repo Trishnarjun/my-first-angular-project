@@ -9,7 +9,8 @@
     </form>
   </div>
   <div class="todo-list">
-    <h1 >List ({{todoCount}})</h1>
+    <h1 *ngIf="todoCount !== 0">List ({{todoCount}})</h1>
+    <h1 *ngIf="todoCount === 0">List</h1>
     <p *ngFor=" let todo of todos" >{{todo}}</p>
   </div>
 </div>

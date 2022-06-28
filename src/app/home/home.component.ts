@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 todoCount: number = 4;
 btnTxt: string = 'Add';
-ToDoTxt: string = 'New Todo'
+ToDoTxt: string = ''
 todos: any = [];
 
 
@@ -20,9 +20,13 @@ todos: any = [];
   }
 
   addItem() {
-    this.todos.push(this.ToDoTxt);
-    this.ToDoTxt ="";
-    this.todoCount = this.todos.length;
+    if (this.ToDoTxt !== "" ) {
+      this.todos.push(this.ToDoTxt);
+      this.ToDoTxt ="";
+      this.todoCount = this.todos.length;
+    }
+
+
   }
 
 }
