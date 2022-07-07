@@ -48,15 +48,23 @@ html {
   display: flex;
   margin-top: 1.5rem;
   padding: .7rem;
-  display: flex;
   justify-content: center;
   border: none;
   border-radius: 2rem;
   transition: 0.3s;
-
 }
 
-.btn:hover {
+.delete-btn {
+  font-family: 'Comfortaa';
+  padding: .7rem;
+  border: none;
+  border-radius: 2rem;
+  transition: 0.3s;
+}
+
+
+
+.btn:hover, .delete-btn:hover {
   box-shadow: 4px 4px gray;
 
 }
@@ -66,7 +74,7 @@ html {
 }
 
 .list-items {
-  background-color: beige;
+  background-color: rgb(255, 255, 255);
   padding: 2rem;
   text-align: center;
 }

@@ -11,6 +11,7 @@
   <div class="todo-list">
     <h1 *ngIf="todoCount !== 0">List ({{todoCount}})</h1>
     <h1 *ngIf="todoCount === 0">List</h1>
-    <p *ngFor=" let todo of todos" class="list-items" >{{todo}} </p>
+    <p *ngFor=" let todo of todos" class="list-items" >{{todo}} <button class="delete-btn"> x </button> </p>
+
   </div>
 </div>

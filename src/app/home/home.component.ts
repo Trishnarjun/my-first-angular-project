@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -14,7 +15,10 @@ todos: any = [];
 
 
 
-  constructor() { }
+  constructor(private cookie: CookieService) {
+
+
+   }
 
   ngOnInit() {
     this.todoCount = this.todos.length;
@@ -23,6 +27,7 @@ todos: any = [];
   addItem() {
     if (this.ToDoTxt !== "" ) {
       this.todos.push(this.ToDoTxt);
+      this.cookie.set("l", "todos")
       this.ToDoTxt ="";
       this.todoCount = this.todos.length;
     }
