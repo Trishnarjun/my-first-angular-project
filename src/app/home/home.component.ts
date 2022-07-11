@@ -12,6 +12,7 @@ todoCount: number = 4;
 btnTxt: string = 'Add';
 ToDoTxt: string = ''
 todos: any = [];
+color: string = "white";
 
 
 
@@ -33,6 +34,20 @@ todos: any = [];
     }
 
 
+  }
+
+  deleteItem(i: number) {
+    this.todos.splice(i, 1);
+  }
+
+  itemStatus(i: number) {
+    if (this.color === "salmon" ) {
+      this.color = "white";
+    } else if (this.color === "white") {
+      this.color = "limegreen";
+    } else {
+      this.color = "salmon";
+    }
   }
 
 }
