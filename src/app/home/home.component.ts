@@ -15,16 +15,12 @@ ToDoTxt: string = ''
 todos: any = (this.cookie.get('todosList')).split(',');
 color: string = "white";
 clicked: {[key: number]: string} = {};
-// todos = ;
 
 
 
 
   constructor(private cookie: CookieService) {
 
-    console.log(this.todos)
-    console.log((this.cookie.get('todosList')).split(','))
-    console.log( )
 
   }
 
@@ -47,7 +43,7 @@ clicked: {[key: number]: string} = {};
 
   deleteItem(i: number) {
     this.todos.splice(i, 1);
-    this.cookie.set("todos", this.todos)
+    this.cookie.set("todosList", (this.todos))
   }
 
   itemStatus(i: number) {
