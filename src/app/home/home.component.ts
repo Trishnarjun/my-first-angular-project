@@ -12,10 +12,10 @@ export class HomeComponent implements OnInit {
 todoCount: number = 4;
 btnTxt: string = 'Add';
 ToDoTxt: string = ''
-todos: any = [];
+todos: any = (this.cookie.get('todosList')).split(',');
 color: string = "white";
 clicked: {[key: number]: string} = {};
-// this.todos = this.cookie.get('todosList');
+// todos = ;
 
 
 
@@ -23,7 +23,7 @@ clicked: {[key: number]: string} = {};
   constructor(private cookie: CookieService) {
 
     console.log(this.todos)
-    console.log((this.cookie.get('todosList')))
+    console.log((this.cookie.get('todosList')).split(','))
     console.log( )
 
   }
@@ -37,7 +37,7 @@ clicked: {[key: number]: string} = {};
   addItem() {
     if (this.ToDoTxt !== "" ) {
       this.todos.push(this.ToDoTxt);
-      this.cookie.set("todosList", JSON.stringify(this.todos))
+      this.cookie.set("todosList", (this.todos))
       this.ToDoTxt ="";
       this.todoCount = this.todos.length;
     }
