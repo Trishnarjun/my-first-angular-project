@@ -36,7 +36,7 @@ html {
 .text {
   font-family: 'Comfortaa';
   border: none;
-  padding: .7rem;
+  padding: .9rem;
 }
 
 .text ::selection {
@@ -76,7 +76,10 @@ html {
 .list-items {
   background-color: rgb(255, 255, 255);
   padding: 2rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  justify-content: center;
 }
 
 .todo-list {
@@ -110,7 +113,11 @@ html {
 
   .list-items {
     background-color: rgb(255, 255, 255);
-    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: center;
+
   }
 
   .all-content {

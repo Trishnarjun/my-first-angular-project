@@ -11,11 +11,13 @@ import { CookieService } from 'ngx-cookie-service';
 export class HomeComponent implements OnInit {
 todoCount: number = 4;
 btnTxt: string = 'Add';
-ToDoTxt: string = ''
+ToDoTxt: string = '';
+EditToDoTxt: string = '';
 todos: any = (this.cookie.get('todosList')).split(',');
 color: string = "white";
 clicked: {[key: number]: string} = {};
 edit: boolean = false;
+editField: boolean = false;
 
 
 
@@ -51,27 +53,31 @@ edit: boolean = false;
   editItem(i: number) {
     if (this.edit === false) {
       this.edit = true;
-
-
     } else {
       this.edit = false;
     }
 
   }
 
+  saveEdit(i: number) {
+    this.todos.splice(i, 1, this.EditToDoTxt)
+    this.cookie.set("todosList", (this.todos))
+    this.edit = false;
+  }
+
 
   itemStatus(i: number) {
-    if (this.edit === false) {
-      if (this.clicked[i] === "salmon") {
-        this.clicked[i] = "white";
-      } else if (this.clicked[i] === "white") {
-        this.clicked[i] = "limegreen";
-      } else {
-        this.clicked[i] = "salmon";
-      }
-    } else {
-
-    }
+    // if (this.edit === false) {
+    //   if (this.clicked[i] === "salmon") {
+    //     this.clicked[i] = "white";
+    //   } else if (this.clicked[i] === "white") {
+    //     this.clicked[i] = "limegreen";
+    //   } else {
+    //     this.clicked[i] = "salmon";
+    //   }
+    // } else {
+    //   this.edit = true;
+    // }
   }
 
 }

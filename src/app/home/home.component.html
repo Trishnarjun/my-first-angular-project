@@ -11,6 +11,6 @@
   <div class="todo-list">
     <h1 *ngIf="todoCount !== 0">List ({{todoCount}})</h1>
     <h1 *ngIf="todoCount === 0">List</h1>
-    <p (click)="itemStatus(i)" [style.background-color]="clicked[i]" *ngFor=" let todo of todos; let i = index" class="list-items"   >{{todo}} <button (click)="deleteItem(i)" class="delete-btn"> x </button>  <button (click)=" editItem(i)" class="delete-btn"> ||| </button>  <input *ngIf="edit === true" type="text" class="text" name="item" placeholder="to do list" [(ngModel)]="ToDoTxt"> <button *ngIf="edit === true" class="delete-btn"> ✓ </button></p>
+    <p (click)="itemStatus(i)" [style.background-color]="clicked[i]" *ngFor=" let todo of todos; let i = index" class="list-items"   >{{todo}} <button (click)=" editItem(i)" class="delete-btn"> ||| </button> <input *ngIf="edit === true" type="text" class="text" name="item" placeholder="edit to do list" [(ngModel)]="EditToDoTxt"> <button *ngIf="edit === true" class="delete-btn" (click)=" saveEdit(i)"> ✓ </button> <button (click)="deleteItem(i)" class="delete-btn"> x </button>    </p>
   </div>
 </div>
