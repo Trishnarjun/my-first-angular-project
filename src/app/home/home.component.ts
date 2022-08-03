@@ -15,6 +15,7 @@ ToDoTxt: string = ''
 todos: any = (this.cookie.get('todosList')).split(',');
 color: string = "white";
 clicked: {[key: number]: string} = {};
+edit: boolean = false;
 
 
 
@@ -44,23 +45,33 @@ clicked: {[key: number]: string} = {};
   deleteItem(i: number) {
     this.todos.splice(i, 1);
     this.cookie.set("todosList", (this.todos))
+    this.todoCount = this.todos.length;
   }
 
-  itemStatus(i: number) {
-    if (this.clicked[i] === "salmon") {
-      this.clicked[i] = "white";
-    } else if (this.clicked[i] === "white") {
-      this.clicked[i] = "limegreen";
+  editItem(i: number) {
+    if (this.edit === false) {
+      this.edit = true;
+
+
     } else {
-      this.clicked[i] = "salmon";
+      this.edit = false;
     }
-    // if (this.color === "salmon" ) {
-    //   this.color = "white";
-    // } else if (this.color === "white") {
-    //   this.color = "limegreen";
-    // } else {
-    //   this.color = "salmon";
-    // }
+
+  }
+
+
+  itemStatus(i: number) {
+    if (this.edit === false) {
+      if (this.clicked[i] === "salmon") {
+        this.clicked[i] = "white";
+      } else if (this.clicked[i] === "white") {
+        this.clicked[i] = "limegreen";
+      } else {
+        this.clicked[i] = "salmon";
+      }
+    } else {
+
+    }
   }
 
 }
