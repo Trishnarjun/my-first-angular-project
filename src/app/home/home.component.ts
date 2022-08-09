@@ -16,7 +16,8 @@ EditToDoTxt: string = '';
 todos: any = (this.cookie.get('todosList')).split(',');
 color: string = "white";
 clicked: {[key: number]: string} = {};
-edit: boolean = false;
+edited: {[key: number]: boolean} = {};
+edit: any = false;
 editField: boolean = false;
 
 
@@ -51,10 +52,10 @@ editField: boolean = false;
   }
 
   editItem(i: number) {
-    if (this.edit === false) {
-      this.edit = true;
+    if (this.edited[i] === false) {
+      this.edited[i] = true;
     } else {
-      this.edit = false;
+      this.edited[i] = false;
     }
 
   }
@@ -62,7 +63,7 @@ editField: boolean = false;
   saveEdit(i: number) {
     this.todos.splice(i, 1, this.EditToDoTxt)
     this.cookie.set("todosList", (this.todos))
-    this.edit = false;
+    this.edited[i] = false;
   }
 
 
