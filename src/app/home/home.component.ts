@@ -17,7 +17,7 @@ todos: any = (this.cookie.get('todosList')).split(',');
 color: string = "white";
 clicked: {[key: number]: string} = {};
 edited: {[key: number]: boolean} = {};
-edit: any = false;
+
 editField: boolean = false;
 
 
@@ -52,10 +52,10 @@ editField: boolean = false;
   }
 
   editItem(i: number) {
-    if (this.edited[i] === false) {
-      this.edited[i] = true;
-    } else {
+    if (this.edited[i] === true) {
       this.edited[i] = false;
+    } else {
+      this.edited[i] = true;
     }
 
   }
